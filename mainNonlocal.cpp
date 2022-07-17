@@ -1,15 +1,13 @@
 #include "./inc/C_Loadtxt.h"
-#include "./inc/f_Cell_list2D.h"
+#include "./inc/f_Linked_list2D.h"
 #include "./inc/f_Verlet_list2D.h"
-#include "./inc/C_Matrix_Sparse.h"
-#include "./inc/C_Matrix_Dense.h"
 
 int main()
 {
     int NEM = 18, NPE = 3;
     double rl = 1;
 
-    C_Matrix_Sparse nonlcl_ele(18,18);
+    std::vector < std::vector<int> > nonlclele;
 
     std::vector < double > rc;
     std::vector < double > Ld;
@@ -43,10 +41,10 @@ int main()
         center.push_back(cen_ele);
     }
 
-    Cell_list2D (NEM, center, rc, lcxy, head, lscl, Lc);
-    Verlet_list2D (head, lscl, lcxy, Lc, center, Ld, rl, nonlcl_ele, ele_count, NEM);
+    Linked_list2D (NEM, center, rc, lcxy, head, lscl, Lc);
+    Verlet_list2D (head, lscl, lcxy, Lc, center, Ld, rl, nonlclele, ele_count, NEM);
 
-    cout << nonlcl_ele;
+    // cout << nonlclele;
 
     for (int j = 0; j < NEM; j++)
     {
