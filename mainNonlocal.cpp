@@ -42,9 +42,7 @@ int main()
     }
 
     Linked_list2D (NEM, center, rc, lcxy, head, lscl, Lc);
-    Verlet_list2D (head, lscl, lcxy, Lc, center, Ld, rl, nonlclele, ele_count, NEM);
-
-    // cout << nonlclele;
+    Verlet_list2D (head, lscl, Lc, center, Ld, rl, nonlclele, ele_count, NEM);
 
     for (int j = 0; j < NEM; j++)
     {

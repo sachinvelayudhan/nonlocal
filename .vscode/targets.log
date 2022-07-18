@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul 16 14:51:07 2022
+# Make data base, printed on Mon Jul 18 11:30:45 2022
 
 # Variables
 
@@ -34,7 +32,6 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
 _ = /home/sachin/.vscode-server/bin/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a/node
- 
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # 'override' directive
@@ -54,7 +51,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-a379cf7f-320f-4ee2-b6c5-cd51b76903a2.sock
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-b8c66aa1-acc9-4fb6-b7cf-7e008cbf0ff5.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -67,9 +64,8 @@ DISPLAY = :0
 PWD = /home/sachin/Repo/nonlocal
 # default
 .LOADED := 
- 
 # environment
-WSL_INTEROP = /run/WSL/9085_interop
+WSL_INTEROP = /run/WSL/12_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -99,6 +95,9 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = sachin
 # makefile
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 .DEFAULT_GOAL := neigh
 # environment
 NAME = DESKTOP-4SCI4JA
@@ -150,8 +149,10 @@ LANG = C
 TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Ubuntu
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=4/93=4%
+# Load=69/1024=7%, Rehash=0, Collisions=4/94=4%
 
 # Pattern-specific Variable Values
 
@@ -159,9 +160,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2080, inode 72661): 17 files, no impossibilities.
+# . (device 2080, inode 72661): 29 files, no impossibilities.
 
-# 17 files, no impossibilities in 1 directories.
+# 29 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -188,9 +189,18 @@ nonlocal:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-16 14:51:06.2426563
+#  Last modified 2022-07-18 11:30:43.0906831
 #  File has been updated.
 #  Successfully updated.
+
+neigh3D:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 11):
+	g++ -std=c++17 -g -c mainNonlocal3D.cpp -I$(incPath)
+	g++ -std=c++17 -o main.exe mainNonlocal3D.o
+	./main.exe
 
 # Not a target:
 .DEFAULT:
@@ -202,7 +212,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 11):
+#  recipe to execute (from 'makefile', line 15):
 	rm -v *.o
 	rm -v *.exe
 
@@ -216,19 +226,19 @@ neigh:
 	./main.exe
 
 # files hash-table stats:
-# Load=7/1024=1%, Rehash=0, Collisions=0/17=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/18=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 236 B / avg = 9 B
-# current buf: size = 8162 B / used = 236 B / count = 24 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 445 B / avg = 11 B
+# current buf: size = 8162 B / used = 445 B / count = 38 / avg = 11 B
 
-# strcache performance: lookups = 32 / hit rate = 25%
+# strcache performance: lookups = 46 / hit rate = 17%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=1/32=3%
-# Finished Make data base on Sat Jul 16 14:51:07 2022
+# Load=38/8192=0%, Rehash=0, Collisions=2/46=4%
+# Finished Make data base on Mon Jul 18 11:30:45 2022
 
  
