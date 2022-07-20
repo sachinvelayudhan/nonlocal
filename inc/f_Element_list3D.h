@@ -41,6 +41,10 @@ void Element_list3D (int head[], int lscl[], int lcxy, int Lc[], std::vector < s
                 while (i != -1)
                 {
                     std::vector<int> tmp1;
+                    std::vector<int> tmp2;
+                    tmp1.push_back(i+1);
+                    tmp2.push_back(i+1);
+
                     int count = 0;
 
                     for (int k = 0; k < s; k++)
@@ -61,6 +65,8 @@ void Element_list3D (int head[], int lscl[], int lcxy, int Lc[], std::vector < s
                     nonlclele.push_back(tmp1);
                     i = lscl[i];
 
+                    tmp2.push_back(count);
+
                     // Writing Neighbour elements to text file
                     for(int it = 0; it < tmp1.size(); it++)
                     {
@@ -68,7 +74,11 @@ void Element_list3D (int head[], int lscl[], int lcxy, int Lc[], std::vector < s
                     }
                     out1 << "\n";
 
-                    out2 << count << "\n";
+                    for(int ix = 0; ix < tmp2.size(); ix++)
+                    {
+                        out2 << tmp2[ix] << " ";
+                    }
+                    out2 << "\n";
                 } 
             } 
         }

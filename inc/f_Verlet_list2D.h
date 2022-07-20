@@ -36,6 +36,10 @@ void Verlet_list2D (int head[], int lscl[], int Lc[], std::vector < std::vector<
             while (i != -1)
             {
                 std::vector<int> tmp1;
+                std::vector<int> tmp2;
+                tmp1.push_back(i+1);
+                tmp2.push_back(i+1);
+
                 int count = 0;
 
                 for (int k = 0; k < s; k++)
@@ -56,6 +60,8 @@ void Verlet_list2D (int head[], int lscl[], int Lc[], std::vector < std::vector<
                 nonlclele.push_back(tmp1);
                 i = lscl[i];
 
+                tmp2.push_back(count);
+
                 // Writing Neighbour elements to text file
                 for(int it = 0; it < tmp1.size(); it++)
                 {
@@ -63,7 +69,11 @@ void Verlet_list2D (int head[], int lscl[], int Lc[], std::vector < std::vector<
                 }
                 out1 << "\n";
 
-                out2 << count << "\n";
+                for(int ix = 0; ix < tmp2.size(); ix++)
+                {
+                    out2 << tmp2[ix] << " ";
+                }
+                out2 << "\n";
             } 
         } 
     }

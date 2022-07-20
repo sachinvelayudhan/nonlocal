@@ -9,7 +9,6 @@ void Element_list2D (int NEM, std::vector < std::vector<double> >& center, std::
     std::ofstream out1("neigh_elem.txt");
     std::ofstream out2("neigh_count.txt");
 
-
     for (int m = 0; m < NEM; m++)
     {
         ele_count[m] = 0;
@@ -92,6 +91,10 @@ void Element_list2D (int NEM, std::vector < std::vector<double> >& center, std::
             while (i != -1)
             {
                 std::vector<int> tmp1;
+                std::vector<int> tmp2;
+                tmp1.push_back(i+1);
+                tmp2.push_back(i+1);
+
                 int count = 0;
 
                 for (int k = 0; k < s; k++)
@@ -112,6 +115,8 @@ void Element_list2D (int NEM, std::vector < std::vector<double> >& center, std::
                 nonlclele.push_back(tmp1);
                 i = lscl[i];
 
+                tmp2.push_back(count);
+
                 // Writing Neighbour elements to text file
                 for(int it = 0; it < tmp1.size(); it++)
                 {
@@ -119,7 +124,11 @@ void Element_list2D (int NEM, std::vector < std::vector<double> >& center, std::
                 }
                 out1 << "\n";
 
-                out2 << count << "\n";
+                for(int ix = 0; ix < tmp2.size(); ix++)
+                {
+                    out2 << tmp2[ix] << " ";
+                }
+                out2 << "\n";
             } 
         }
     }
