@@ -4,7 +4,7 @@
 
 int main()
 {
-    int NEM = 132, NPE = 4;
+    int NEM = 142, NPE = 4;
     double rl = 1;
 
     std::ofstream out1("neigh_elem3D.txt");
@@ -14,9 +14,15 @@ int main()
 
     std::vector < double > rc;
     std::vector < double > Ld;
+    std::vector < double > xlim;
+    std::vector < double > ylim;
+    std::vector < double > zlim;
 
     rc = {1,1,1};
     Ld = {3,3,3};
+    xlim = {-1.5,1.5};
+    ylim = {-1.5,1.5};
+    zlim = {0,3};
 
     int elCon[4], Lc[3], ele_count[NEM];
 
@@ -31,8 +37,8 @@ int main()
     std::vector < std::vector<double> > center; 
     std::vector < double > cen_ele;
 
-    auto nodes = loadtxt <double> ( "nodes3D.txt" );
-    auto elements = loadtxt <int> ( "elements3D.txt" );
+    auto nodes = loadtxt <double> ( "nodes3D1.txt" );
+    auto elements = loadtxt <int> ( "elements3D1.txt" );
 
     for (int i = 0; i < NEM; i++)
     {
@@ -45,7 +51,7 @@ int main()
         center.push_back(cen_ele);
     }
 
-    Linked_list3D (NEM, center, rc, lcxy, lcxyz, head, lscl, Lc);
+    Linked_list3D (NEM, center, rc, lcxy, lcxyz, head, lscl, Lc, xlim, ylim, zlim);
     Element_list3D (head, lscl, lcxy, Lc, center, Ld, rl, nonlclele, ele_count, NEM);
 
     for (int j = 0; j < NEM; j++)
