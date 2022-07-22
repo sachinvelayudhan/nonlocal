@@ -1,8 +1,8 @@
 #include <vector>
 
-void Linked_list2D (int NEM, std::vector < std::vector<double> >& center, std::vector< double >& rc, int lcxy, int head[], int lscl[], int Lc[])
+void Linked_list2D (int NEM, std::vector < std::vector<double> >& center, std::vector< double >& rc, int lcxy, int head[], int lscl[], int Lc[], std::vector< double >& xlim, std::vector< double >& ylim)
 {
-    int mc[2], c;
+    int mc[2], c, mcx[2];
 
     for (c = 0; c < lcxy; c++)
     {

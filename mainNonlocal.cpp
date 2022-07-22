@@ -7,15 +7,22 @@ int main()
     int NEM = 18, NPE = 3;
     double rl = 1;
 
-    std::vector < std::vector<int> > nonlclele;
+    std::ofstream out1("neigh_elem2D.txt");
+    std::ofstream out2("neigh_count2D.txt");
 
     std::vector < double > rc;
     std::vector < double > Ld;
+    std::vector < double > xlim;
+    std::vector < double > ylim;
+
+    std::vector < int > nonlclele[NEM];
 
     rc = {1,1};
     Ld = {3,3};
+    xlim = {0,3};
+    ylim = {0,3};
 
-    int elCon[3], Lc[2], ele_count[NEM];
+    int elCon[3], Lc[2], ele_count[NEM]; 
 
     Lc[0] = Ld[0] / rc[0];
     Lc[1] = Ld[1] / rc[1];
@@ -41,11 +48,16 @@ int main()
         center.push_back(cen_ele);
     }
 
-    Linked_list2D (NEM, center, rc, lcxy, head, lscl, Lc);
+    Linked_list2D (NEM, center, rc, lcxy, head, lscl, Lc, xlim, ylim);
     Verlet_list2D (head, lscl, Lc, center, Ld, rl, nonlclele, ele_count, NEM);
 
     for (int j = 0; j < NEM; j++)
     {
-        cout << ele_count[j] << endl;
+        out2 << ele_count[j] << endl;
+        for (int i = 0; i < ele_count[j]; i++)
+        {
+            out1 << nonlclele[j][i] << "    ";
+        }
+        out1 << "\n";
     }
 }

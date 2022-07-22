@@ -7,7 +7,10 @@ int main()
     int NEM = 132, NPE = 4;
     double rl = 1;
 
-    std::vector < std::vector<int> > nonlclele;
+    std::ofstream out1("neigh_elem3D.txt");
+    std::ofstream out2("neigh_count3D.txt");
+
+    std::vector < int > nonlclele[NEM];
 
     std::vector < double > rc;
     std::vector < double > Ld;
@@ -47,6 +50,11 @@ int main()
 
     for (int j = 0; j < NEM; j++)
     {
-        cout << ele_count[j] << endl;
+        out2 << ele_count[j] << endl;
+        for (int i = 0; i < ele_count[j]; i++)
+        {
+            out1 << nonlclele[j][i] << "    ";
+        }
+        out1 << "\n";
     }
 }
