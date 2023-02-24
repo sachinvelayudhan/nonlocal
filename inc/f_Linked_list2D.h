@@ -7,6 +7,7 @@ void Linked_list2D (int NEM, std::vector < std::vector<double> >& center, std::v
     for (int k = 0; k < 2; k++)
     {
         mcx[k] = 0.0;
+        mcy[k] = 0.0;
     }
     
     if (xlim[0] < 0.0)

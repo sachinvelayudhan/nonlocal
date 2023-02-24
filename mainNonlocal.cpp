@@ -4,7 +4,7 @@
 
 int main()
 {
-    int NEM = 18, NPE = 3;
+    int NEM = 2, NPE = 3;
     double rl = 1;
 
     std::ofstream out1("neigh_elem2D.txt");
