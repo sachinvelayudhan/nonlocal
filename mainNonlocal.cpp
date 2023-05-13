@@ -4,7 +4,7 @@
 
 int main()
 {
-    int NEM = 2, NPE = 3;
+    int NEM = 32, NPE = 3;
     double rl = 1;
 
     std::ofstream out1("neigh_elem2D.txt");
@@ -18,9 +18,9 @@ int main()
     std::vector < int > nonlclele[NEM];
 
     rc = {1,1};
-    Ld = {3,3};
-    xlim = {0,3};
-    ylim = {0,3};
+    Ld = {4,4};
+    xlim = {0,4};
+    ylim = {0,4};
 
     int elCon[3], Lc[2], ele_count[NEM]; 
 
